@@ -1,4 +1,10 @@
 function imgch1(chrno){
+var name1 = document.getElementById('name1').value
+var name2 = document.getElementById('name2').value
+
+localStorage.setItem("name1",name1)
+localStorage.setItem("name2",name2)
+
 var srcchk=document.getElementById('img1'+chrno).src.substr(-5,1)
 if(srcchk=="u"){
 document.getElementById('img1'+chrno).src="img/"+chrno+".png"
@@ -30,8 +36,12 @@ if (localStorage.getItem("1st1")===null){
 	for(var i=1;i<13;i++){
 	document.getElementById('img1'+i).src=localStorage.getItem("1st"+i)
 	document.getElementById('img2'+i).src=localStorage.getItem("2st"+i)
+	document.getElementById('name1').value=localStorage.getItem("name1")
+	document.getElementById('name2').value=localStorage.getItem("name2")
 	}
 }
+
+
 }
 
 function rese(){
@@ -39,6 +49,10 @@ function rese(){
 		localStorage.setItem("1st"+i,"img/"+i+".png")
 		localStorage.setItem("2st"+i,"img/"+i+".png")
 	}
+	document.getElementById('name1').value=""
+	document.getElementById('name2').value=""
+	localStorage.setItem("name1","")
+	localStorage.setItem("name2","")
 disp()
 }
 
