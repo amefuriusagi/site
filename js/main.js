@@ -58,7 +58,7 @@ disp()
 
 function twit() {
 	var s, url;
-	s = "12キャラ対決結果 #ネトスマ";
+	s = "ネトスマ12キャラ対決結果 #ネトスマ";
 	url = document.location.href;
 	
 	var dt = new Date();
